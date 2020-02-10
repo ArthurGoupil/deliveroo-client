@@ -1,38 +1,160 @@
-.App {
-  text-align: center;
+/* COLOR VARIABLES */
+:root {
+  --main-black: #2e3333;
+  --main-grey: #868a8a;
+  --background-color: #f3f5f5;
+  --text-grey: #808484;
+  --popular: #ff8000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* MAIN STYLING */
+body,
+input,
+button {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--main-black);
+}
+main {
+  background-color: var(--background-color);
+}
+header {
+  background-color: white;
+}
+h1 {
+  font-size: 32px;
+  line-height: 26px;
+  margin-bottom: 45px;
+  font-weight: bold;
+}
+h2 {
+  font-size: 24px;
+  line-height: 20px;
+  font-weight: bold;
+  margin: 26px 0 26px 0;
+}
+h3 {
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* FLEXBOX */
+.d-flex {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+.justify-center {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.align-center {
+  align-items: center;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.space-between {
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+/* HEADER STYLING */
+/* Top header */
+.header-top {
+  height: 60px;
+  border-bottom: solid 1px rgb(233, 235, 235);
+}
+.header-top-center {
+  height: 100%;
+  width: 96vw;
+  max-width: 1200px;
+}
+.logo {
+  height: 70%;
+}
+/* Bottom header */
+.header-bottom-center {
+  width: 96vw;
+  max-width: 1200px;
+  padding: 30px 0;
+}
+.restaurant-infos {
+  padding-top: 20px;
+  margin-right: 40px;
+}
+.restaurant-infos > p {
+  font-size: 19px;
+  line-height: 29px;
+  color: var(--main-grey);
+}
+.header-bottom-center > img {
+  object-fit: cover;
+  object-position: center;
+  height: 235px;
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* MAIN STYLING */
+.content-center {
+  width: 96vw;
+  max-width: 1200px;
+}
+.main-left {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 30px;
+}
+.main-right {
+  width: 30%;
+}
+.meal-wrapper {
+  width: 50%;
+}
+.meal {
+  background-color: white;
+  padding: 17px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.meal:hover {
+  box-shadow: 0 22px 24px 0 rgba(46, 51, 51, 0.07);
+  transition: 0.3s;
+}
+.meal:nth-child(odd) {
+  margin-right: 15px;
+}
+.meal > img {
+  max-width: 130px;
+  height: 130px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.meal-left > p {
+  font-size: 14px;
+  line-height: 20.8px;
+  margin-bottom: 16px;
+  color: var(--text-grey);
+  height: 41.6px;
+  overflow: hidden;
+}
+.meal-price {
+  font-size: 17px;
+  line-height: 14.7px;
+  color: var(--text-grey);
+}
+.meal-popular {
+  font-size: 12px;
+  line-height: 10.7px;
+  font-weight: bold;
+  color: var(--popular);
+}
+.icon-popular {
+  margin-left: 15px;
+  margin-right: 5px;
 }
