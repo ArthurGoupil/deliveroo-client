@@ -181,6 +181,8 @@ hr {
   border-radius: 5px;
   margin-top: 26px;
   box-shadow: 0 22px 24px 0 var(--shadow);
+  position: sticky;
+  top: 26px;
 }
 .cart-button {
   width: 100%;
