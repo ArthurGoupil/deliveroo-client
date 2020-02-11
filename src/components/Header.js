@@ -8,6 +8,7 @@ const Header = props => {
       <div className="header-top d-flex justify-center">
         <div className="header-top-center d-flex align-center">
           <svg
+            alt="Logo Deliveroo"
             className="logo"
             viewBox="0 0 300 80"
             xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +27,7 @@ const Header = props => {
             <h1>{restaurant.name}</h1>
             <p>{restaurant.description}</p>
           </div>
-          <img src={headerImage}></img>
+          <img alt="Le Pain Quotidien illustration" src={headerImage}></img>
         </div>
       </div>
     </header>

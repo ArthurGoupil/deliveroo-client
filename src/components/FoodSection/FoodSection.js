@@ -1,16 +1,35 @@
 import React from 'react';
 import FoodItem from './components/FoodItem';
 
-const FoodSection = props => {
-  const sectionInfos = props.children;
+const FoodSection = ({
+  meals,
+  name,
+  setCart,
+  cart,
+  cartTotalPrice,
+  setCartTotalPrice
+}) => {
   return (
     <>
-      <h2>{sectionInfos.name}</h2>
-      <div className="d-flex flex-wrap">
-        {sectionInfos.meals.map((meal, index) => {
-          return <FoodItem key="index">{meal}</FoodItem>;
-        })}
-      </div>
+      {meals.length !== 0 && (
+        <div>
+          <h2>{name}</h2>
+          <div className="d-flex flex-wrap">
+            {meals.map((meal, index) => {
+              return (
+                <FoodItem
+                  key={index}
+                  {...meal}
+                  setCart={setCart}
+                  cart={cart}
+                  cartTotalPrice={cartTotalPrice}
+                  setCartTotalPrice={setCartTotalPrice}
+                />
+              );
+            })}
+          </div>
+        </div>
+      )}
     </>
   );
 };

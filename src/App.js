@@ -4,10 +4,13 @@ import './App.css';
 
 import Header from './components/Header';
 import FoodSection from './components/FoodSection/FoodSection';
+import Cart from './components/Cart';
 
 const App = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [cart, setCart] = useState([]);
+  const [cartTotalPrice, setCartTotalPrice] = useState(0);
 
   const fetchData = async () => {
     try {
@@ -36,13 +39,27 @@ const App = () => {
             <div className="content d-flex justify-center">
               <div className="content-center d-flex">
                 <div className="main-left">
-                  {data.categories.map(item => {
-                    if (item.meals.length !== 0) {
-                      return <FoodSection>{item}</FoodSection>;
-                    }
+                  {data.categories.map((category, index) => {
+                    return (
+                      <FoodSection
+                        key={index}
+                        {...category}
+                        setCart={setCart}
+                        cart={cart}
+                        cartTotalPrice={cartTotalPrice}
+                        setCartTotalPrice={setCartTotalPrice}
+                      />
+                    );
                   })}
                 </div>
-                <div className="main-right"></div>
+                <div className="main-right">
+                  <Cart
+                    cart={cart}
+                    setCart={setCart}
+                    cartTotalPrice={cartTotalPrice}
+                    setCartTotalPrice={setCartTotalPrice}
+                  />
+                </div>
               </div>
             </div>
           </main>
