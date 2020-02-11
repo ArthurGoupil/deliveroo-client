@@ -73,7 +73,7 @@ const Cart = ({ cart, setCart, cartTotalPrice, setCartTotalPrice }) => {
             </div>
             <hr />
             <div className="total d-flex space-between">
-              <span>Frais de livraison</span>
+              <span>Total</span>
               <span>{(cartTotalPrice + deliveryFee).toFixed(2)}&nbsp;€</span>
             </div>
           </div>
